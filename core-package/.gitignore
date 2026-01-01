@@ -1,0 +1,19 @@
+# Build artifacts (keep the final package)
+# *.pkg.tar.zst  # Commented out - we want to commit the final package
+*.pkg.tar.xz
+*.pkg.tar.gz
+*.pkg.tar.bz2
+*.pkg.tar
+
+# Build directories
+src/
+pkg/
+
+# Keep output directory but ignore temp files
+output/*.log
+output/*.sig
+
+# makepkg files
+*.log
+*.sig
+

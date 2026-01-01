@@ -1,0 +1,7 @@
+# configure for compile kernel
+
+NAME=GetLainux
+VERSION=1.1
+AUTHOR=Nishant Gaurav
+IMPORT=default
+
