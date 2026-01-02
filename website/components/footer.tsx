@@ -22,7 +22,7 @@ export function Footer() {
     : 'Minimal Linux distro built on Arch. For developers who want control, not convenience.'
   const githubUrl = isNexusPage 
     ? "https://github.com/codewithevilxd/Nexus"
-    : "https://github.com/codewithevilxd/GetLainux"
+    : "https://github.com/CodewithEvilxd/GetLainux"
 
   return (
     <footer className="border-t bg-muted/30">

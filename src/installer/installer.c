@@ -3,11 +3,11 @@
 * @version v0.3 beta only
 * @author Nishant Gaurav
 * @license: GPL-3.0
-* @details For issues and contributions, visit: https://github.com/codewithevilxd/GetLainux
+* @details For issues and contributions, visit: https://github.com/CodewithEvilxd/GetLainux
 * @status: STATUS WORK **TRUE**
 * @also: download iso from github release for virtual machine.
 
-  @hosting: github.com/codewithevilxd/GetLainux
+  @hosting: github.com/CodewithEvilxd/GetLainux
 */
 
 #include <ncurses.h>
@@ -171,8 +171,14 @@ int check_dependencies() {
     char pkg_manager[32] = "";
 
     // Detect package manager
+    // Supported distributions:
+    // - Arch Linux (pacman)
+    // - Ubuntu/Debian (apt-get)
+    // - Kali Linux (apt-get) - Debian-based, uses same package manager
+    // - Fedora/RHEL (dnf/yum)
+    // - openSUSE (zypper)
     if (file_exists("/usr/bin/pacman")) strcpy(pkg_manager, "pacman");
-    else if (file_exists("/usr/bin/apt-get")) strcpy(pkg_manager, "apt");
+    else if (file_exists("/usr/bin/apt-get")) strcpy(pkg_manager, "apt");  // Ubuntu, Debian, Kali Linux
     else if (file_exists("/usr/bin/dnf")) strcpy(pkg_manager, "dnf");
     else if (file_exists("/usr/bin/yum")) strcpy(pkg_manager, "yum");
     else if (file_exists("/usr/bin/zypper")) strcpy(pkg_manager, "zypper");
@@ -191,10 +197,13 @@ int check_dependencies() {
         log_message("Installing missing dependencies...");
 
         if (strcmp(pkg_manager, "pacman") == 0) {
+            // Arch Linux
             run_command("pacman -Sy --noconfirm --needed arch-install-scripts dosfstools e2fsprogs gptfdisk grub efibootmgr", 1);
         } else if (strcmp(pkg_manager, "apt") == 0) {
+            // Ubuntu, Debian, Kali Linux - all use apt-get
             run_command("apt-get update && apt-get install -y arch-install-scripts dosfstools e2fsprogs gdisk grub-efi-amd64", 1);
         } else if (strcmp(pkg_manager, "dnf") == 0 || strcmp(pkg_manager, "yum") == 0) {
+            // Fedora, RHEL, CentOS
             run_command("dnf install -y arch-install-scripts dosfstools e2fsprogs gdisk grub2-efi-x64", 1);
         }
 

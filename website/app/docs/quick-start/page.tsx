@@ -39,12 +39,12 @@ export default function QuickStartPage() {
             <CardContent className="space-y-4">
               <div className="bg-muted p-4 rounded-lg">
                 <p className="font-semibold mb-2">Clone Repository (Recommended):</p>
-                <code className="block text-sm font-mono">git clone https://github.com/codewithevilxd/GetLainux.git</code>
+                <code className="block text-sm font-mono">git clone https://github.com/CodewithEvilxd/GetLainux.git</code>
                 <code className="block text-sm font-mono mt-2">cd GetLainux</code>
               </div>
               <div className="bg-muted p-4 rounded-lg">
                 <p className="font-semibold mb-2">Or Download ZIP:</p>
-                <p className="text-sm text-muted-foreground">Visit <a href="https://github.com/codewithevilxd/GetLainux" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a> and click "Code" → "Download ZIP", then extract it.</p>
+                <p className="text-sm text-muted-foreground">Visit <a href="https://github.com/CodewithEvilxd/GetLainux" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a> and click "Code" → "Download ZIP", then extract it.</p>
               </div>
             </CardContent>
           </Card>

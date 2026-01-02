@@ -11,6 +11,7 @@ import { cn } from '@/lib/utils'
 
 const getlainuxNavItems = [
   { href: '#home', label: 'Home' },
+  { href: '#overview', label: 'Overview' },
   { href: '#installation', label: 'Installation' },
   { href: '#usage', label: 'Usage' },
   { href: '#features', label: 'Features' },
@@ -118,20 +119,20 @@ export function Navbar() {
           {/* Right side actions */}
           <div className="flex items-center space-x-2">
             {mounted && (
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                aria-label="Toggle theme"
-                className="h-9 w-9"
-              >
-                {theme === 'dark' ? (
-                  <Sun className="h-5 w-5" />
-                ) : (
-                  <Moon className="h-5 w-5" />
-                )}
-              </Button>
-            )}
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              aria-label="Toggle theme"
+              className="h-9 w-9"
+            >
+              {theme === 'dark' ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </Button>
+          )}
 
             <Button
               variant="ghost"
@@ -140,7 +141,7 @@ export function Navbar() {
               className="hidden md:flex h-9 w-9"
             >
               <a
-                href={isNexusPage ? "https://github.com/codewithevilxd/Nexus" : "https://github.com/codewithevilxd/GetLainux"}
+                href={isNexusPage ? "https://github.com/CodewithEvilxd/Nexus" : "https://github.com/CodewithEvilxd/GetLainux"}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"

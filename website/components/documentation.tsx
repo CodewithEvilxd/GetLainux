@@ -70,7 +70,7 @@ export function Documentation() {
           <CardContent>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
               <a
-                href="https://github.com/codewithevilxd/GetLainux"
+                href="https://github.com/CodewithEvilxd/GetLainux"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 p-3 rounded border border-border hover:border-primary/50 hover:bg-muted transition-colors"

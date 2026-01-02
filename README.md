@@ -1,5 +1,5 @@
 # GetLainux
-![GetLainux Logo](https://raw.githubusercontent.com/codewithevilxd/GetLainux/main/assets/logo.png) 
+![GetLainux Logo](https://raw.githubusercontent.com/CodewithEvilxd/GetLainux/main/assets/logo.png) 
 
 **GetLainux** is a highly specialized, command-line-centric Linux distribution meticulously engineered from the robust foundation of Arch Linux. Developed by **Nishant Gaurav**, this project is dedicated to pushing the boundaries of system performance, absolute control, and uncompromising security for expert users, system developers, and low-level programming enthusiasts.
 
@@ -10,7 +10,7 @@
 #### Option 1: Clone Repository (Recommended)
 ```bash
 # Clone the repository
-git clone https://github.com/codewithevilxd/GetLainux.git
+git clone https://github.com/CodewithEvilxd/GetLainux.git
 cd GetLainux
 
 # Make build script executable
@@ -25,7 +25,7 @@ sudo ./bin/installer.lain
 ```
 
 #### Option 2: Download ZIP
-1. Visit: https://github.com/codewithevilxd/GetLainux
+1. Visit: https://github.com/CodewithEvilxd/GetLainux
 2. Click "Code" → "Download ZIP"
 3. Extract the ZIP file
 4. Open terminal in the extracted folder
@@ -42,6 +42,12 @@ sudo pacman -S gcc ncurses curl openssl arch-install-scripts
 
 **Ubuntu/Debian:**
 ```bash
+sudo apt-get install build-essential libncurses5-dev libcurl4-openssl-dev libssl-dev
+```
+
+**Kali Linux:**
+```bash
+sudo apt-get update
 sudo apt-get install build-essential libncurses5-dev libcurl4-openssl-dev libssl-dev
 ```
 
@@ -80,6 +86,7 @@ Our core philosophy emphasizes:
 ## Key Features & Differentiators
 *   **Arch Linux Core:** Benefits from the rolling release model, offering the latest software packages and a straightforward, well-documented base.
 *   **Custom-Built Linux Kernel:** Tailored specifically for GetLainux, compiled with performance and security in mind. This includes fine-tuning kernel parameters, stripping unnecessary modules, and evaluating real-time (RT) or enhanced security patches where applicable.
+*   **Custom Kernel Optimization:** Advanced kernel tuning and optimization for maximum performance. Stripped unnecessary modules, optimized scheduler, and performance-focused configurations.
 *   **Minimalist Init System:** Utilizes *[e.g., systemd with a heavily trimmed set of units, or a fast alternative like Runit/OpenRC if adopted]* for rapid boot times and negligible resource consumption.
 *   **Bare-Bones Graphical Environment (Optional):** Designed to integrate seamlessly with highly efficient tiling window managers (*e.g., i3wm, dwm, bspwm*) or to operate purely in a command-line interface.
 *   **Proprietary C Library/Utilities:** Development of custom, performance-critical system utilities and an API in C, providing direct and efficient interaction with hardware and OS resources.
@@ -96,7 +103,7 @@ GetLainux is designed for professionals and advanced users in fields such as:
 ## Project Status & Roadmap
 GetLainux is actively under development. Current development phases being driven by **Nishant Gaurav** include:
 *   Refinement of core kernel build configurations and patch integration.
-*   Implementation of the `getlainux-coreutils` (a custom suite of essential system tools in C).
+*   **getlainux-coreutils:** Complete C utilities suite implemented (ls, cat, grep, cp, mv, rm, mkdir, chmod, chown, and 30+ more utilities). Fully functional and ready for use.
 *   Estab
 lishing a stable, minimal command-line environment blueprint.
 *   Development of a robust ISO generation pipeline for testable releases.

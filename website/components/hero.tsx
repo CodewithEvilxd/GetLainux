@@ -7,6 +7,16 @@ import { Button } from './ui/button'
 import { InteractiveText } from './interactive-text'
 import ShuffleText from './shuffle-text'
 
+const handleDirectDownload = (e: React.MouseEvent<HTMLAnchorElement>, url: string, filename: string) => {
+  e.preventDefault()
+  const link = document.createElement('a')
+  link.href = url
+  link.download = filename
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
 const stats = [
   { icon: Server, label: 'Arch Linux' },
   { icon: Zap, label: 'Fast' },
@@ -58,8 +68,8 @@ export function Hero() {
             </h2>
           </div>
 
-          <p className="text-base sm:text-xl md:text-2xl font-semibold text-foreground max-w-2xl mx-auto leading-tight mt-3 sm:mt-4 px-4">
-            Built on Arch Linux. No bloat, just control. For developers who want their system to do exactly what they tell it.
+          <p className="text-base sm:text-xl md:text-2xl font-semibold text-foreground max-w-3xl mx-auto leading-relaxed mt-3 sm:mt-4 px-4">
+            Minimal Linux distribution built on Arch. Custom kernel, zero bloat, full control. For developers who understand their system.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 justify-center items-stretch sm:items-center mt-4 sm:mt-5 px-4">
@@ -70,9 +80,9 @@ export function Hero() {
             </Button>
             <Button asChild size="lg" variant="default" className="w-full sm:w-auto">
               <a 
-                href="https://github.com/codewithevilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst"
+                href="https://github.com/CodewithEvilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst"
                 download="getlainux-core-0.1-1-x86_64.pkg.tar.zst"
-                target="_blank"
+                onClick={(e) => handleDirectDownload(e, 'https://github.com/CodewithEvilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst', 'getlainux-core-0.1-1-x86_64.pkg.tar.zst')}
                 rel="noopener noreferrer"
               >
                 <Download className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
@@ -81,7 +91,7 @@ export function Hero() {
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
-              <a href="https://github.com/codewithevilxd/GetLainux" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/CodewithEvilxd/GetLainux" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                 <span className="hidden sm:inline">View on GitHub</span>
                 <span className="sm:hidden">GitHub</span>

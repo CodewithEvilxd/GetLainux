@@ -1,5 +1,5 @@
 # GetLainux
-![GetLainux Logo](https://raw.githubusercontent.com/codewithevilxd/GetLainux/main/assets/logo.png) 
+![GetLainux Logo](https://raw.githubusercontent.com/CodewithEvilxd/GetLainux/main/assets/logo.png) 
 
 **GetLainux** is a highly specialized, command-line-centric Linux distribution meticulously engineered from the robust foundation of Arch Linux. Developed by **Nishant Gaurav**, this project is dedicated to pushing the boundaries of system performance, absolute control, and uncompromising security for expert users, system developers, and low-level programming enthusiasts.
 

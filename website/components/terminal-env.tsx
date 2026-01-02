@@ -20,7 +20,7 @@ export function TerminalEnv() {
   const inputRef = useRef<HTMLInputElement>(null)
   const terminalRef = useRef<HTMLDivElement>(null)
 
-  const packageUrl = 'https://github.com/codewithevilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst'
+  const packageUrl = 'https://github.com/CodewithEvilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst'
   const packageName = 'getlainux-core-0.1-1-x86_64.pkg.tar.zst'
 
   useEffect(() => {

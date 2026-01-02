@@ -21,6 +21,10 @@ const steps = [
         code: 'sudo apt-get install build-essential libncurses5-dev libcurl4-openssl-dev libssl-dev',
       },
       {
+        name: 'Kali Linux',
+        code: 'sudo apt-get update && sudo apt-get install build-essential libncurses5-dev libcurl4-openssl-dev libssl-dev',
+      },
+      {
         name: 'Fedora',
         code: 'sudo dnf install gcc ncurses-devel curl-devel openssl-devel',
       },
@@ -43,12 +47,23 @@ const steps = [
   },
 ]
 
+const packageUrl = 'https://github.com/CodewithEvilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst'
+const packageName = 'getlainux-core-0.1-1-x86_64.pkg.tar.zst'
+
+const handleDirectDownload = (e: React.MouseEvent<HTMLAnchorElement>, url: string, filename: string) => {
+  e.preventDefault()
+  const link = document.createElement('a')
+  link.href = url
+  link.download = filename
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
 function CommandDownload() {
   const [command, setCommand] = useState('')
   const [isDownloading, setIsDownloading] = useState(false)
   const [error, setError] = useState('')
-  const packageUrl = 'https://github.com/codewithevilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst'
-  const packageName = 'getlainux-core-0.1-1-x86_64.pkg.tar.zst'
 
   const handleCommandChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCommand(e.target.value)
@@ -68,7 +83,6 @@ function CommandDownload() {
         const link = document.createElement('a')
         link.href = packageUrl
         link.download = packageName
-        link.target = '_blank'
         link.rel = 'noopener noreferrer'
         
         // Add to DOM, click, then remove
@@ -233,7 +247,7 @@ export function Installation() {
                 <div>
                   <p className="text-base font-bold mb-2">Option 1: Clone Repository (Recommended)</p>
                   <div className="bg-muted p-4 rounded-lg border-2">
-                    <code className="block text-base font-mono font-bold text-foreground">git clone https://github.com/codewithevilxd/GetLainux.git</code>
+                    <code className="block text-base font-mono font-bold text-foreground">git clone https://github.com/CodewithEvilxd/GetLainux.git</code>
                     <code className="block text-base font-mono font-bold text-foreground mt-2">cd GetLainux</code>
                   </div>
                 </div>
@@ -241,7 +255,7 @@ export function Installation() {
                   <p className="text-base font-bold mb-2">Option 2: Download ZIP</p>
                   <Button asChild size="lg" className="w-full">
                     <a 
-                      href="https://github.com/codewithevilxd/GetLainux/archive/refs/heads/main.zip"
+                      href="https://github.com/CodewithEvilxd/GetLainux/archive/refs/heads/main.zip"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -277,21 +291,35 @@ export function Installation() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Button asChild size="lg" className="flex-1">
-                  <a 
-                    href="https://github.com/codewithevilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst"
-                    download="getlainux-core-0.1-1-x86_64.pkg.tar.zst"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Download className="mr-2 h-4 w-4" />
-                    Download Core Package (v0.1)
-                  </a>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <Button 
+                  size="lg" 
+                  className="w-full"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleDirectDownload(e as any, packageUrl, packageName)
+                  }}
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  <span>Download Core Package (v0.1)</span>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="w-full border-2"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    window.open(packageUrl, '_blank', 'noopener,noreferrer')
+                  }}
+                >
+                  <Download className="mr-2 h-4 w-4" />
+                  <span>Download from GitHub</span>
+                </Button>
+              </div>
+              <div className="flex justify-center pt-2">
+                <Button asChild variant="ghost" size="sm">
                   <a 
-                    href="https://github.com/codewithevilxd/GetLainux/tree/main/core-package"
+                    href="https://github.com/CodewithEvilxd/GetLainux/tree/main/core-package"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

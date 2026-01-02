@@ -36,6 +36,10 @@ sudo pacman -S gcc ncurses curl openssl arch-install-scripts
 # Ubuntu/Debian
 sudo apt-get install build-essential libncurses5-dev libncursesw5-dev libcurl4-openssl-dev libssl-dev
 
+# Kali Linux
+sudo apt-get update
+sudo apt-get install build-essential libncurses5-dev libncursesw5-dev libcurl4-openssl-dev libssl-dev
+
 # Fedora
 sudo dnf install gcc ncurses-devel curl-devel openssl-devel
 ```
@@ -308,6 +312,22 @@ author=Nishant Gaurav
 package=pacman, aur
 ```
 
+### Kernel Optimization
+
+GetLainux includes automatic kernel optimization during installation. The optimization:
+- Tunes kernel parameters for maximum performance
+- Optimizes CPU scheduler settings
+- Configures memory management
+- Applies boot-time optimizations
+
+**Manual Optimization:**
+```bash
+cd kernel
+sudo ./optimize_kernel.sh /
+```
+
+For details, see `kernel/README.md`.
+
 ### Kernel Configuration
 
 Edit `kernel/config.txt`:
@@ -466,7 +486,7 @@ sudo ./bin/installer.lain
 ## 📞 Support
 
 For issues, questions, or contributions:
-- **GitHub**: https://github.com/codewithevilxd/GetLainux
+- **GitHub**: https://github.com/CodewithEvilxd/GetLainux
 - **Issues**: Create an issue on GitHub
 - **Documentation**: Check `docs/` directory
 

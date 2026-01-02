@@ -60,10 +60,14 @@ sudo pacman -U output/getlainux-core-0.1-1-x86_64.pkg.tar.zst
 To make the package available for the installer:
 
 ### Option 1: Upload to main branch (raw)
-1. Upload the `.pkg.tar.zst` file to the repository root
-2. Update `CORE_URL` in `src/installer/include/installer.h`:
+1. Upload the `.pkg.tar.zst` file to the `core-package/output/` directory in the repository
+2. The URL will be:
+   ```
+   https://github.com/CodewithEvilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst
+   ```
+3. Update `CORE_URL` in `src/installer/include/installer.h`:
    ```c
-   #define CORE_URL "https://github.com/codewithevilxd/GetLainux/raw/main/getlainux-core-0.1-1-x86_64.pkg.tar.zst"
+   #define CORE_URL "https://github.com/CodewithEvilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst"
    ```
 
 ### Option 2: Upload to GitHub Releases
@@ -71,7 +75,7 @@ To make the package available for the installer:
 2. Upload the `.pkg.tar.zst` file as a release asset
 3. Update `FALLBACK_CORE_URL` in `src/installer/include/installer.h`:
    ```c
-   #define FALLBACK_CORE_URL "https://github.com/codewithevilxd/GetLainux/releases/download/v0.1/getlainux-core-0.1-1-x86_64.pkg.tar.zst"
+   #define FALLBACK_CORE_URL "https://github.com/CodewithEvilxd/GetLainux/releases/download/v0.1/getlainux-core-0.1-1-x86_64.pkg.tar.zst"
    ```
 
 ## Package Contents

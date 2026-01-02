@@ -43,4 +43,4 @@ At this stage of development, it is *strongly recommended* to perform installati
 
 We sincerely need your support and promotion of the distribution. Community activity is the fundamental motivation for creating a quality, free and open-source product. If you find a bug or have suggestions for improvement - create an Issue or share information about the project.
 
-For more information, visit: https://github.com/codewithevilxd/GetLainux
+For more information, visit: https://github.com/CodewithEvilxd/GetLainux

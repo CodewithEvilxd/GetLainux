@@ -710,6 +710,38 @@ int turbo_install(const char *disk_name) {
         fclose(fp);
     }
     
+    // Custom Kernel Optimization
+    printf("Applying custom kernel optimizations...\n");
+    
+    // Try to use kernel optimization script if available
+    if (access("../../kernel/optimize_kernel.sh", F_OK) == 0) {
+        system("chmod +x ../../kernel/optimize_kernel.sh 2>/dev/null");
+        system("../../kernel/optimize_kernel.sh /mnt 2>/dev/null || true");
+    } else if (access("kernel/optimize_kernel.sh", F_OK) == 0) {
+        system("chmod +x kernel/optimize_kernel.sh 2>/dev/null");
+        system("kernel/optimize_kernel.sh /mnt 2>/dev/null || true");
+    } else {
+        // Fallback: Apply basic kernel optimizations directly
+        FILE *kfp = fopen("/mnt/etc/sysctl.d/99-getlainux-kernel.conf", "w");
+        if (kfp) {
+            fprintf(kfp, "# GetLainux Kernel Optimization Configuration\n");
+            fprintf(kfp, "kernel.sched_migration_cost_ns = 5000000\n");
+            fprintf(kfp, "kernel.sched_autogroup_enabled = 0\n");
+            fprintf(kfp, "kernel.sched_cfs_bandwidth_slice_us = 1000\n");
+            fprintf(kfp, "vm.swappiness = 10\n");
+            fprintf(kfp, "vm.vfs_cache_pressure = 50\n");
+            fprintf(kfp, "vm.dirty_ratio = 15\n");
+            fprintf(kfp, "vm.dirty_background_ratio = 5\n");
+            fprintf(kfp, "vm.overcommit_memory = 1\n");
+            fprintf(kfp, "net.core.rmem_default = 262144\n");
+            fprintf(kfp, "net.core.wmem_default = 262144\n");
+            fprintf(kfp, "net.core.rmem_max = 33554432\n");
+            fprintf(kfp, "net.core.wmem_max = 33554432\n");
+            fprintf(kfp, "fs.file-max = 2097152\n");
+            fclose(kfp);
+        }
+    }
+    
     // Step 9: Finalization
     printf("\nStep 9: Finalizing\n");
     system("arch-chroot /mnt mkinitcpio -P 2>/dev/null");

@@ -17,9 +17,9 @@ export function SystemTest() {
   const [isRunning, setIsRunning] = useState(false)
   const [overallStatus, setOverallStatus] = useState<'idle' | 'checking' | 'success' | 'error'>('idle')
 
-  const packageUrl = 'https://github.com/codewithevilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst'
-  const githubRepoUrl = 'https://github.com/codewithevilxd/GetLainux'
-  const githubRawBase = 'https://github.com/codewithevilxd/GetLainux/raw/main'
+  const packageUrl = 'https://github.com/CodewithEvilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst'
+  const githubRepoUrl = 'https://github.com/CodewithEvilxd/GetLainux'
+  const githubRawBase = 'https://github.com/CodewithEvilxd/GetLainux/raw/main'
 
   const runTests = async () => {
     setIsRunning(true)

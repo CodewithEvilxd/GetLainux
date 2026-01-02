@@ -5,9 +5,9 @@
 #include <pthread.h>
 #include <ncurses.h>
 // Configuration
-#define CORE_URL "https://github.com/codewithevilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst" // core(kernel) GetLainux from github
-#define FALLBACK_CORE_URL "https://github.com/codewithevilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst"
-#define ARCH_ISO_URL "https://github.com/codewithevilxd/GetLainux/releases/download/getlainuxiso/getlainuxiso-2025.01.15-x86_64.iso" // links for arch iso download
+#define CORE_URL "https://github.com/CodewithEvilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst" // core(kernel) GetLainux from github
+#define FALLBACK_CORE_URL "https://github.com/CodewithEvilxd/GetLainux/raw/main/core-package/output/getlainux-core-0.1-1-x86_64.pkg.tar.zst"
+#define ARCH_ISO_URL "https://github.com/CodewithEvilxd/GetLainux/releases/download/getlainuxiso/getlainuxiso-2025.01.15-x86_64.iso" // links for arch iso download
 #define MAX_DISKS 32 // max count disks
 #define MAX_PATH 512 // max path count
 #define LOG_BUFFER_SIZE 8192

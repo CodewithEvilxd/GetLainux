@@ -33,16 +33,20 @@ int check_qemu_dependencies() {
         log_message("Installing QEMU virtualization tools...");
 
         char pkg_manager[32] = "";
+        // Detect package manager (supports Arch, Ubuntu, Debian, Kali Linux, Fedora, RHEL)
         if (file_exists("/usr/bin/pacman")) strcpy(pkg_manager, "pacman");
-        else if (file_exists("/usr/bin/apt-get")) strcpy(pkg_manager, "apt");
+        else if (file_exists("/usr/bin/apt-get")) strcpy(pkg_manager, "apt");  // Ubuntu, Debian, Kali Linux
         else if (file_exists("/usr/bin/dnf")) strcpy(pkg_manager, "dnf");
         else if (file_exists("/usr/bin/yum")) strcpy(pkg_manager, "yum");
 
         if (strcmp(pkg_manager, "pacman") == 0) {
+            // Arch Linux
             run_command("pacman -Sy --noconfirm --needed qemu libvirt virt-manager virt-viewer", 1);
         } else if (strcmp(pkg_manager, "apt") == 0) {
+            // Ubuntu, Debian, Kali Linux
             run_command("apt-get update && apt-get install -y qemu-system-x86 qemu-utils libvirt-clients libvirt-daemon-system virt-manager", 1);
         } else if (strcmp(pkg_manager, "dnf") == 0 || strcmp(pkg_manager, "yum") == 0) {
+            // Fedora, RHEL, CentOS
             run_command("dnf install -y qemu-kvm libvirt virt-manager", 1);
         }
 

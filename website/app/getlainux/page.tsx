@@ -1,4 +1,5 @@
 import { Hero } from '@/components/hero'
+import { Overview } from '@/components/overview'
 import { Installation } from '@/components/installation'
 import { Usage } from '@/components/usage'
 import { Features } from '@/components/features'
@@ -15,6 +16,7 @@ export default function GetLainuxPage() {
   return (
     <>
       <Hero />
+      <Overview />
       <Installation />
       <Usage />
       <Features />

@@ -75,9 +75,10 @@ if makepkg -f --cleanbuild --clean; then
         echo "  sudo pacman -U $OUTPUT_DIR/$PKGFILE"
         echo ""
         echo "To upload to GitHub:"
-        echo "  1. Create a release on GitHub"
-        echo "  2. Upload: $OUTPUT_DIR/$PKGFILE"
-        echo "  3. Or upload to: github.com/codewithevilxd/GetLainux/raw/main/"
+        echo "  1. Upload to: core-package/output/ directory in your repo"
+        echo "  2. The URL will be:"
+        echo "     https://github.com/CodewithEvilxd/GetLainux/raw/main/core-package/output/$PKGFILE"
+        echo "  3. Or create a GitHub release and upload as asset"
         echo ""
     else
         echo "❌ Error: Package file not found after build"

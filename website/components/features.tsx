@@ -1,6 +1,6 @@
 'use client'
 
-import { Gauge, Shield, Sliders, Puzzle, Terminal, Code } from 'lucide-react'
+import { Gauge, Shield, Sliders, Puzzle, Terminal, Code, Cpu } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 
 const features = [
@@ -8,6 +8,11 @@ const features = [
     icon: Gauge,
     title: 'Fast',
     description: 'Custom kernel tuned for speed. No unnecessary services running in the background.',
+  },
+  {
+    icon: Cpu,
+    title: 'Custom Kernel Optimization',
+    description: 'Advanced kernel tuning and optimization. Stripped unnecessary modules, optimized scheduler, and performance-focused configurations.',
   },
   {
     icon: Shield,

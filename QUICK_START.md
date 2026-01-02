@@ -9,6 +9,13 @@ sudo pacman -S gcc ncurses curl openssl arch-install-scripts
 
 # Ubuntu/Debian  
 sudo apt-get install build-essential libncurses5-dev libcurl4-openssl-dev libssl-dev
+
+# Kali Linux
+sudo apt-get update
+sudo apt-get install build-essential libncurses5-dev libcurl4-openssl-dev libssl-dev
+
+# Fedora
+sudo dnf install gcc ncurses-devel curl-devel openssl-devel
 ```
 
 ### Step 2: Build Installer

@@ -466,7 +466,7 @@ sudo ./bin/installer.lain
 ## 📞 Support
 
 For issues, questions, or contributions:
-- **GitHub**: https://github.com/codewithevilxd/GetLainux
+- **GitHub**: https://github.com/CodewithEvilxd/GetLainux
 - **Issues**: Create an issue on GitHub
 - **Documentation**: Check `docs/` directory
 

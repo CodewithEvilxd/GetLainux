@@ -15,7 +15,7 @@ layer_01 {
 
     // Блок установки
     nexus build_machine {
-        iso: "https://github.com/codewithevilxd/GetLainux/releases/download/getlainuxiso/getlainuxiso-2025.01.15-x86_64.iso",
+        iso: "https://github.com/CodewithEvilxd/GetLainux/releases/download/getlainuxiso/getlainuxiso-2025.01.15-x86_64.iso",
         disk: 20GB,
         virt: target_vm
     }

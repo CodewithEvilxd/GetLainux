@@ -81,6 +81,20 @@
   .font-game {
     font-family: var(--font-vt323), monospace;
     letter-spacing: 0.02em;
+    font-size: 1.1em;
+  }
+
+  .font-heading {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    text-transform: none;
+  }
+
+  .font-display {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
   }
 }
 

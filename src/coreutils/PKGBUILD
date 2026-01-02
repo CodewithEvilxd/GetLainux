@@ -1,0 +1,29 @@
+# Maintainer: Nishant Gaurav <codewithevilxd>
+pkgname=getlainux-coreutils
+pkgver=1.0
+pkgrel=1
+pkgdesc="GetLainux Coreutils - Advanced C utilities suite for GetLainux"
+arch=('x86_64')
+url="https://github.com/CodewithEvilxd/GetLainux"
+license=('GPL3')
+depends=('glibc')
+makedepends=('gcc' 'make')
+source=()
+md5sums=()
+
+build() {
+    cd "$srcdir/../src/coreutils"
+    make
+}
+
+package() {
+    cd "$srcdir/../src/coreutils"
+    make DESTDIR="$pkgdir" install
+    
+    # Create man pages directory
+    mkdir -p "$pkgdir/usr/share/man/man1"
+    
+    # Install README
+    install -Dm644 README.md "$pkgdir/usr/share/doc/getlainux-coreutils/README.md"
+}
+
