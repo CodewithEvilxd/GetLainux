@@ -8,9 +8,9 @@ go.mod
 # binary files
 
 # ISO build output
-Lainux-iso/
+# Lainux-iso/
 
-lainux-vm.qcow2
+# lainux-vm.qcow2
 
 # others
 go.mod
@@ -30,3 +30,6 @@ src/lainux-driver/src/header/
 
 # Logs and caches
 *.log
+
+# Accela-main separate repo
+Accela-main/
