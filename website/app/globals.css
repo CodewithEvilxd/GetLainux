@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 229 84% 90%;
+    --input: 229 84% 90%;
+    --ring: 210 100% 50%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 210 40% 98%;
+    --card: 0 0% 3%;
+    --card-foreground: 210 40% 98%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 0 0% 8%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 210 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+
+  code, pre {
+    font-family: var(--font-jetbrains-mono), monospace;
+  }
+
+  kbd {
+    font-family: var(--font-vt323), monospace;
+  }
+
+  .font-pixel {
+    font-family: var(--font-press-start), monospace;
+    letter-spacing: 0.05em;
+  }
+
+  .font-game {
+    font-family: var(--font-vt323), monospace;
+    letter-spacing: 0.02em;
+    font-size: 1.1em;
+  }
+
+  .font-heading {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    text-transform: none;
+  }
+
+  .font-display {
+    font-family: var(--font-space-grotesk), system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar - more subtle */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary/20 text-foreground;
+}
+
+/* Focus visible */
+*:focus-visible {
+  @apply outline-none ring-2 ring-primary/50 ring-offset-2 ring-offset-background;
+}
+
+/* Prose styles for documentation */
+.prose {
+  @apply text-foreground;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  @apply text-foreground font-bold;
+}
+
+.prose p {
+  @apply text-muted-foreground;
+}
+
+.prose code {
+  @apply bg-muted px-1.5 py-0.5 rounded text-sm font-game text-foreground;
+}
+
+.prose pre {
+  @apply bg-muted p-4 rounded-lg overflow-x-auto;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose ul, .prose ol {
+  @apply text-muted-foreground;
+}
+
+.prose a {
+  @apply text-primary hover:underline;
+}
+
+/* Minimal animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+
+/* Clean minimal background */
+body {
+  background: hsl(var(--background));
+}
+
+/* Interactive text enhancements */
+.interactive-text-container {
+  position: relative;
+  display: inline-block;
+}
+
+.interactive-text-container span {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Logo background fix - remove white background */
+img[src*="logo.png"],
+img[alt*="GetLainux Logo"] {
+  background: transparent !important;
+  mix-blend-mode: normal;
+}
+
+/* Ensure logo images have transparent background */
+img[src="/logo.png"] {
+  background-color: transparent !important;
+  background: transparent !important;
+}
