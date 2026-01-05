@@ -1,0 +1,62 @@
+# Maintainer: Nishant Gaurav <codewithevilxd>
+pkgname=getlainux-core
+pkgver=0.1
+pkgrel=1
+pkgdesc="GetLainux Core Package - Essential system components and kernel"
+arch=('x86_64')
+url="https://github.com/CodewithEvilxd/GetLainux"
+license=('GPL3')
+depends=('linux' 'linux-firmware' 'base')
+makedepends=('pacman' 'arch-install-scripts')
+source=()
+md5sums=()
+
+package() {
+    # Create essential directories
+    mkdir -p "$pkgdir/etc"
+    mkdir -p "$pkgdir/usr/bin"
+    mkdir -p "$pkgdir/usr/lib/systemd/system"
+    
+    # Create hostname file
+    echo "getlainux" > "$pkgdir/etc/hostname"
+    
+    # Create basic system configuration
+    cat > "$pkgdir/etc/getlainux-release" <<EOF
+NAME="GetLainux"
+VERSION="0.1"
+ID=getlainux
+PRETTY_NAME="GetLainux 0.1"
+ANSI_COLOR="0;36"
+EOF
+
+    # Create systemd service for GetLainux
+    cat > "$pkgdir/usr/lib/systemd/system/getlainux-core.service" <<EOF
+[Unit]
+Description=GetLainux Core Service
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/true
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+    # Create a simple getlainux-info script
+    cat > "$pkgdir/usr/bin/getlainux-info" <<'EOF'
+#!/bin/bash
+echo "GetLainux System Information"
+echo "============================"
+if [ -f /etc/getlainux-release ]; then
+    cat /etc/getlainux-release
+fi
+echo ""
+echo "Kernel: $(uname -r)"
+echo "Architecture: $(uname -m)"
+echo "Hostname: $(hostname)"
+EOF
+    chmod +x "$pkgdir/usr/bin/getlainux-info"
+}
+

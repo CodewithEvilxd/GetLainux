@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetLainux - Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-terminal"></i>
+                <span>GetLainux</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#installation" class="nav-link">Installation</a></li>
+                <li><a href="#usage" class="nav-link">Usage</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#docs" class="nav-link">Docs</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-code"></i>
+                    <span>v0.1 Beta</span>
+                </div>
+                <h1 class="hero-title">
+                    GetLainux
+                    <span class="gradient-text">Installer</span>
+                </h1>
+                <p class="hero-description">
+                    A highly specialized, command-line-centric Linux distribution built on Arch Linux. 
+                    Minimal, fast, and secure.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#installation" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Get Started
+                    </a>
+                    <a href="https://github.com/CodewithEvilxd/GetLainux" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-server"></i>
+                        <span>Arch Linux Based</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-bolt"></i>
+                        <span>Lightning Fast</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure by Design</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Section -->
+    <section id="installation" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-download"></i>
+                    Installation
+                </h2>
+                <p class="section-subtitle">Get GetLainux up and running in minutes</p>
+            </div>
+
+            <div class="installation-steps">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Install Dependencies</h3>
+                        <p>Install required packages for your Linux distribution</p>
+                        <div class="code-tabs">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" data-tab="arch">Arch Linux</button>
+                                <button class="tab-btn" data-tab="ubuntu">Ubuntu/Debian</button>
+                                <button class="tab-btn" data-tab="fedora">Fedora</button>
+                            </div>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="arch">
+                                    <pre><code class="language-bash">sudo pacman -S gcc ncurses curl openssl arch-install-scripts</code></pre>
+                                </div>
+                                <div class="tab-pane" id="ubuntu">
+                                    <pre><code class="language-bash">sudo apt-get install build-essential libncurses5-dev libcurl4-openssl-dev libssl-dev</code></pre>
+                                </div>
+                                <div class="tab-pane" id="fedora">
+                                    <pre><code class="language-bash">sudo dnf install gcc ncurses-devel curl-devel openssl-devel</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Build Installer</h3>
+                        <p>Compile the installer using the build script</p>
+                        <div class="code-block">
+                            <pre><code class="language-bash">chmod +x build.sh
+./build.sh</code></pre>
+                            <button class="copy-btn" data-copy="chmod +x build.sh\n./build.sh">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <div class="info-box">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Type 'y' when prompted to confirm build</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Run Installer</h3>
+                        <p>Execute the installer with root privileges</p>
+                        <div class="code-block">
+                            <pre><code class="language-bash">sudo ./bin/installer.lain</code></pre>
+                            <button class="copy-btn" data-copy="sudo ./bin/installer.lain">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <div class="warning-box">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Root access required for disk operations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Section -->
+    <section id="usage" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-play-circle"></i>
+                    Usage Guide
+                </h2>
+                <p class="section-subtitle">Learn how to use GetLainux installer</p>
+            </div>
+
+            <div class="usage-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Install on Hardware</h3>
+                    <p>Install GetLainux directly on your physical machine</p>
+                    <div class="feature-warning">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small>WARNING: This will erase all data on selected disk!</small>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Install on VM</h3>
+                    <p>Test installation safely in a virtual machine</p>
+                    <div class="feature-info">
+                        <i class="fas fa-check-circle"></i>
+                        <small>Recommended for testing</small>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3>Hardware Info</h3>
+                    <p>View detailed system information and specifications</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h3>System Check</h3>
+                    <p>Verify if your system meets minimum requirements</p>
+                </div>
+            </div>
+
+            <div class="keyboard-shortcuts">
+                <h3>
+                    <i class="fas fa-keyboard"></i>
+                    Keyboard Shortcuts
+                </h3>
+                <div class="shortcuts-grid">
+                    <div class="shortcut-item">
+                        <kbd>↑</kbd> <kbd>↓</kbd>
+                        <span>Navigate menu</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>Enter</kbd>
+                        <span>Select option</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>q</kbd>
+                        <span>Quit/Exit</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>b</kbd>
+                        <span>Go back</span>
+                    </div>
+                    <div class="shortcut-item">
+                        <kbd>l</kbd>
+                        <span>Toggle language</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-star"></i>
+                    Features
+                </h2>
+                <p class="section-subtitle">What makes GetLainux special</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Extreme Performance</h3>
+                    <p>Highly optimized custom kernel with minimal overhead</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security by Design</h3>
+                    <p>Minimal attack surface with transparent processes</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-sliders-h"></i>
+                    </div>
+                    <h3>Full Control</h3>
+                    <p>Unparalleled control over system behavior</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Modular Architecture</h3>
+                    <p>Flexible expansion without bloat</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3>CLI-Centric</h3>
+                    <p>Command-line focused for power users</p>
+                </div>
+
+                <div class="feature-item">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Custom Utilities</h3>
+                    <p>Performance-critical tools written in C</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="docs" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <i class="fas fa-book"></i>
+                    Documentation
+                </h2>
+                <p class="section-subtitle">Complete guides and references</p>
+            </div>
+
+            <div class="docs-grid">
+                <a href="../USAGE_GUIDE.md" class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Complete Usage Guide</h3>
+                    <p>Detailed step-by-step instructions for installation and usage</p>
+                    <div class="doc-link">
+                        <span>Read More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="../QUICK_START.md" class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Quick Start Guide</h3>
+                    <p>Get started in 5 minutes with essential commands</p>
+                    <div class="doc-link">
+                        <span>Read More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="../README.md" class="doc-card">
+                    <div class="doc-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Project README</h3>
+                    <p>Overview, features, and project information</p>
+                    <div class="doc-link">
+                        <span>Read More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <i class="fas fa-terminal"></i>
+                    <span>GetLainux</span>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/codewithevilxd/GetLainux" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                    <a href="#docs">
+                        <i class="fas fa-book"></i>
+                        Documentation
+                    </a>
+                </div>
+                <div class="footer-credit">
+                    <p>Developed by <strong>Nishant Gaurav</strong></p>
+                    <p class="footer-license">GPL-3.0 License</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

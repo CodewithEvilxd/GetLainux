@@ -1,0 +1,35 @@
+# Build artifacts
+*.o
+*.a
+*.so
+*.iso
+
+go.mod
+# binary files
+
+# ISO build output
+# Lainux-iso/
+
+# lainux-vm.qcow2
+
+# others
+go.mod
+ROADMAP.md
+dev.md
+build.sh
+
+# Driver build
+src/lainux-driver/src/lainux
+src/lainux-driver/diag/
+src/lainux-driver/src/header/
+
+# Temporary files
+*~
+.*.swp
+.DS_Store
+
+# Logs and caches
+*.log
+
+# Accela-main separate repo
+Accela-main/
