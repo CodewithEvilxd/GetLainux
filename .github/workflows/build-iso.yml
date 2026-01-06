@@ -42,10 +42,32 @@ jobs:
             echo "build.sh not found, skipping installer build step."
           fi
 
+      - name: Verify ISO profile structure
+        run: |
+          echo "Checking lainux-iso directory structure..."
+          ls -la lainux-iso/ || echo "lainux-iso directory not found"
+          if [ -d "lainux-iso" ]; then
+            echo "Contents of lainux-iso:"
+            ls -la lainux-iso/
+            echo ""
+            echo "Checking for profiledef.sh:"
+            [ -f "lainux-iso/profiledef.sh" ] && echo "✓ profiledef.sh found" || echo "✗ profiledef.sh missing"
+            echo "Checking for airootfs:"
+            [ -d "lainux-iso/airootfs" ] && echo "✓ airootfs directory found" || echo "✗ airootfs directory missing"
+            echo "Checking for packages.x86_64:"
+            [ -f "lainux-iso/packages.x86_64" ] && echo "✓ packages.x86_64 found" || echo "✗ packages.x86_64 missing"
+          fi
+
       - name: Build GetLainux ISO
         working-directory: lainux-iso
         run: |
+          # Get absolute path of profile directory
           PROFILE_DIR="$(pwd)"
+          
+          # Create work and out directories first
+          mkdir -p work out
+          
+          # Get absolute paths after creation
           WORK_DIR="$PROFILE_DIR/work"
           OUT_DIR="$PROFILE_DIR/out"
           
@@ -53,23 +75,30 @@ jobs:
           echo "Work directory: $WORK_DIR"
           echo "Output directory: $OUT_DIR"
           
-          # Verify profiledef.sh exists
-          if [ ! -f "$PROFILE_DIR/profiledef.sh" ]; then
-            echo "ERROR: profiledef.sh not found in $PROFILE_DIR"
-            ls -la "$PROFILE_DIR"
+          # Verify profiledef.sh exists and is readable
+          if [ ! -f "profiledef.sh" ]; then
+            echo "ERROR: profiledef.sh not found"
+            ls -la
             exit 1
           fi
           
-          # Create directories if they don't exist
-          mkdir -p "$WORK_DIR" "$OUT_DIR"
+          # Make profiledef.sh executable
+          chmod +x profiledef.sh
           
-          # Verify directories were created
-          if [ ! -d "$WORK_DIR" ] || [ ! -d "$OUT_DIR" ]; then
-            echo "ERROR: Failed to create work or output directories"
-            exit 1
-          fi
+          # Verify profiledef.sh content
+          echo "profiledef.sh first few lines:"
+          head -n 10 profiledef.sh
           
-          # Run mkarchiso with explicit paths
+          # Verify all required directories and files exist
+          echo "Checking required files and directories..."
+          [ -d "airootfs" ] || { echo "ERROR: airootfs directory missing"; exit 1; }
+          [ -f "packages.x86_64" ] || { echo "ERROR: packages.x86_64 file missing"; exit 1; }
+          [ -f "pacman.conf" ] || { echo "ERROR: pacman.conf file missing"; exit 1; }
+          echo "✓ All required files found"
+          
+          # Run mkarchiso
+          # mkarchiso syntax: mkarchiso [options] <profile_directory>
+          echo "Running mkarchiso..."
           mkarchiso -v -w "$WORK_DIR" -o "$OUT_DIR" "$PROFILE_DIR"
 
       - name: Upload ISO artifact
