@@ -25,7 +25,7 @@ jobs:
       - name: Install tools
         run: |
           pacman -Sy --noconfirm archlinux-keyring
-          pacman -Syu --noconfirm git archiso base-devel
+          pacman -Syu --noconfirm git archiso base-devel grub syslinux
 
       - name: Checkout repository
         uses: actions/checkout@v4

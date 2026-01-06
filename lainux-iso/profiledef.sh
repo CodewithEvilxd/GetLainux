@@ -16,9 +16,8 @@ pacman_conf="pacman.conf"
 airootfs_image_type="squashfs"
 airootfs_image_tool_options=('-comp' 'xz' '-Xbcj' 'x86' '-b' '1M' '-Xdict-size' '1M')
 
-# Boot modes
-bootmodes=('bios.syslinux.mbr' 'bios.syslinux.eltorito' \
-           'uefi-ia32.grub.esp' 'uefi-x64.grub.esp' 'uefi-x64.grub.eltorito')
+# Boot modes (using modern syntax)
+bootmodes=('bios.syslinux' 'uefi.grub')
 
 # Working directories
 working_dir="work"
