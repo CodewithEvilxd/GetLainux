@@ -25,10 +25,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Build C installer
+      - name: Build C installer (optional)
         run: |
-          chmod +x build.sh
-          yes y | ./build.sh
+          if [ -f build.sh ]; then
+            echo "Found build.sh, building installer..."
+            chmod +x build.sh
+            yes y | ./build.sh
+          else
+            echo "build.sh not found, skipping installer build step."
+          fi
 
       - name: Build GetLainux ISO
         working-directory: lainux-iso
