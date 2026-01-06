@@ -9,6 +9,9 @@ iso_version="$(date +%Y.%m.%d)"
 install_dir="arch"
 buildmodes=('iso')
 
+# Pacman configuration for mkarchiso
+pacman_conf="pacman.conf"
+
 # Filesystem settings
 airootfs_image_type="squashfs"
 airootfs_image_tool_options=('-comp' 'xz' '-Xbcj' 'x86' '-b' '1M' '-Xdict-size' '1M')
