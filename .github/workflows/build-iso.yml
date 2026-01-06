@@ -38,7 +38,10 @@ jobs:
       - name: Build GetLainux ISO
         working-directory: lainux-iso
         run: |
-          mkarchiso -v -w work -o out .
+          PROFILE_DIR="$(pwd)"
+          WORK_DIR="$PROFILE_DIR/work"
+          OUT_DIR="$PROFILE_DIR/out"
+          mkarchiso -v -w "$WORK_DIR" -o "$OUT_DIR" "$PROFILE_DIR"
 
       - name: Upload ISO artifact
         uses: actions/upload-artifact@v4
