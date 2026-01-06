@@ -1,0 +1,44 @@
+name: Build GetLainux ISO
+
+on:
+  workflow_dispatch: {}
+  push:
+    paths:
+      - "lainux-iso/**"
+      - "build.sh"
+      - ".github/workflows/build-iso.yml"
+
+jobs:
+  build-iso:
+    runs-on: ubuntu-latest
+
+    container:
+      image: archlinux:latest
+      options: --privileged
+
+    steps:
+      - name: Install tools
+        run: |
+          pacman -Sy --noconfirm archlinux-keyring
+          pacman -Syu --noconfirm git archiso base-devel
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build C installer
+        run: |
+          chmod +x build.sh
+          yes y | ./build.sh
+
+      - name: Build GetLainux ISO
+        working-directory: lainux-iso
+        run: |
+          mkarchiso -v -w work -o out .
+
+      - name: Upload ISO artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: getlainux-iso
+          path: lainux-iso/out/*.iso
+
+
