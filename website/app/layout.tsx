@@ -42,8 +42,122 @@ const vt323 = VT323({
 })
 
 export const metadata: Metadata = {
-  title: 'GetLainux - Documentation',
-  description: 'A highly specialized, command-line-centric Linux distribution built on Arch Linux',
+  title: 'GetLainux - Linux Ecosystem by Nishant Gaurav (CodeWithEvilXD)',
+  description: 'Discover open-source Linux projects by Nishant Gaurav (CodeWithEvilXD): ApexLinux QML shell, GetLainux Arch Linux distro, Nexus Engine, Lainux Cyber KDE theme. Portfolio: nishantdev.space',
+  keywords: ['GetLainux', 'Linux', 'Arch Linux', 'CodeWithEvilXD', 'Nishant Gaurav', 'nishantdev.space', 'ApexLinux', 'Nexus Engine', 'Lainux Cyber', 'Linux Distribution', 'QML Shell', 'KDE Plasma Theme', 'Open Source', 'System Programming', 'Portfolio'],
+  authors: [{ name: 'Nishant Gaurav', url: 'https://github.com/codewithevilxd' }],
+  creator: 'CodeWithEvilXD',
+  publisher: 'Nishant Gaurav',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL('https://www.getlainux.in'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: 'GetLainux - Linux Ecosystem by Nishant Gaurav (CodeWithEvilXD)',
+    description: 'Open-source Linux projects by Nishant Gaurav (CodeWithEvilXD): ApexLinux QML shell, GetLainux Arch Linux distro, Nexus Engine, Lainux Cyber KDE theme. Visit portfolio: nishantdev.space',
+    url: 'https://www.getlainux.in',
+    siteName: 'GetLainux',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'GetLainux - Linux Ecosystem by Nishant Gaurav',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'GetLainux - Linux Ecosystem by Nishant Gaurav',
+    description: 'Open-source Linux projects by Nishant Gaurav (CodeWithEvilXD): ApexLinux, GetLainux, Nexus Engine, Lainux Cyber theme. Portfolio: nishantdev.space',
+    images: ['/logo.png'],
+    creator: '@codewithevilxd',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-site-verification-code',
+  },
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
+  manifest: '/manifest.json',
+  other: {
+    'script[type="application/ld+json"]': JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "GetLainux",
+      "description": "Open-source Linux ecosystem by CodeWithEvilXD (Nishant Gaurav)",
+      "url": "https://www.getlainux.in",
+      "author": {
+        "@type": "Person",
+        "name": "Nishant Gaurav",
+        "alternateName": "CodeWithEvilXD",
+        "url": "https://nishantdev.space",
+        "sameAs": [
+          "https://github.com/codewithevilxd",
+          "https://nishantdev.space",
+          "https://www.getlainux.in"
+        ],
+        "jobTitle": "Software Developer",
+        "knowsAbout": ["Linux", "System Programming", "QML", "Arch Linux", "Open Source Development"]
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Nishant Gaurav"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.getlainux.in/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "mainEntity": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "ApexLinux",
+          "description": "Minimal QML-based Linux shell",
+          "url": "https://www.getlainux.in/apexlinux"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "GetLainux",
+          "description": "Custom Arch Linux distribution",
+          "url": "https://www.getlainux.in/getlainux"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Nexus Engine",
+          "description": "System execution engine",
+          "url": "https://www.getlainux.in/nexus"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "Lainux Cyber Theme",
+          "description": "KDE Plasma cyberpunk theme",
+          "url": "https://www.getlainux.in/lainux-cyber-theme"
+        }
+      ]
+    })
+  },
 }
 
 export default function RootLayout({

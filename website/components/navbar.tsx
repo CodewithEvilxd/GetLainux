@@ -55,6 +55,7 @@ export function Navbar() {
   const isGetLainuxPage = pathname === '/getlainux'
   const isApexLinuxPage = pathname === '/apexlinux'
   const isNexusPage = pathname === '/nexus'
+  const isLainuxCyberPage = pathname === '/lainux-cyber-theme'
 
   const navItems = isGetLainuxPage ? getlainuxNavItems : isApexLinuxPage ? apexlinuxNavItems : isNexusPage ? nexusNavItems : []
   const showNavItems = !isHomePage && navItems.length > 0
@@ -94,13 +95,15 @@ export function Navbar() {
             <div className="h-8 w-8 sm:h-10 sm:w-10 relative bg-transparent">
               <Image
                 src={
-                  isNexusPage 
+                  isNexusPage
                     ? (logoError ? "/logo.png" : "/nexus-logo.png")
                     : isApexLinuxPage
                     ? "/apexlinux-logo.png"
+                    : isLainuxCyberPage
+                    ? "/logo3.png"
                     : "/logo.png"
                 }
-                alt={isNexusPage ? "Nexus Logo" : isApexLinuxPage ? "ApexLinux Logo" : "GetLainux Logo"}
+                alt={isNexusPage ? "Nexus Logo" : isApexLinuxPage ? "ApexLinux Logo" : isLainuxCyberPage ? "Lainux Cyber Logo" : "GetLainux Logo"}
                 width={40}
                 height={40}
                 className="h-8 w-8 sm:h-10 sm:w-10 group-hover:scale-110 transition-transform bg-transparent"
@@ -112,7 +115,7 @@ export function Navbar() {
               />
             </div>
             <span className="text-xl sm:text-2xl font-black font-heading">
-              {isHomePage ? 'GetLainux Ecosystem' : isNexusPage ? 'Nexus' : isApexLinuxPage ? 'ApexLinux' : 'GetLainux'}
+              {isHomePage ? 'GetLainux Ecosystem' : isNexusPage ? 'Nexus' : isApexLinuxPage ? 'ApexLinux' : isLainuxCyberPage ? 'Lainux Cyber' : 'GetLainux'}
             </span>
           </Link>
 
@@ -166,7 +169,7 @@ export function Navbar() {
               className="hidden md:flex h-9 w-9"
             >
               <a
-                href={isNexusPage ? "https://github.com/CodewithEvilxd/Nexus" : isApexLinuxPage ? "https://github.com/codewithevilxd/ApexLinux" : "https://github.com/CodewithEvilxd/GetLainux"}
+                href={isNexusPage ? "https://github.com/CodewithEvilxd/Nexus" : isApexLinuxPage ? "https://github.com/codewithevilxd/ApexLinux" : isLainuxCyberPage ? "https://github.com/codewithevilxd/lainux-cyber-theme" : "https://github.com/CodewithEvilxd/GetLainux"}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -225,7 +228,7 @@ export function Navbar() {
               )
             ))}
             <a
-              href={isNexusPage ? "https://github.com/codewithevilxd/Nexus" : isApexLinuxPage ? "https://github.com/codewithevilxd/ApexLinux" : "https://github.com/codewithevilxd/GetLainux"}
+              href={isNexusPage ? "https://github.com/codewithevilxd/Nexus" : isApexLinuxPage ? "https://github.com/codewithevilxd/ApexLinux" : isLainuxCyberPage ? "https://github.com/codewithevilxd/lainux-cyber-theme" : "https://github.com/codewithevilxd/GetLainux"}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 px-3 sm:px-4 py-2 text-sm sm:text-base font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded-md transition-colors"

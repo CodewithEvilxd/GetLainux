@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Server, Cpu, Terminal } from 'lucide-react'
+import { ArrowRight, Server, Cpu, Terminal, Palette } from 'lucide-react'
 import { Button } from './ui/button'
 
 function ProjectLogo({ src, alt, className, style }: { src: string; alt: string; className?: string; style?: React.CSSProperties }) {
@@ -78,6 +78,25 @@ const projects = [
       'Direct kernel interaction',
       'System execution engine',
       'Automation bridge'
+    ]
+  },
+  {
+    id: 'lainux-cyber-theme',
+    name: 'Lainux Cyber',
+    title: 'KDE Plasma Theme',
+    description: 'Complete KDE Plasma 6 desktop theme with cyberpunk aesthetics. Cyan-dominant palette optimized for OLED displays with cohesive theming from boot to desktop.',
+    icon: Palette,
+    href: '/lainux-cyber-theme',
+    features: ['KDE Plasma 6', 'OLED Optimized', 'Cyberpunk Aesthetic', 'Complete Theming', 'Auto Hardware Detection'],
+    logo: '/logo3.png',
+    status: 'Active',
+    handle: 'lainux-cyber-theme',
+    details: [
+      'Complete desktop theme for KDE Plasma 6',
+      'Cyan/magenta/yellow cyberpunk color palette',
+      'OLED optimized near-black backgrounds',
+      'Cohesive boot splash → login → desktop theming',
+      'Auto-detected hardware sensors for Conky'
     ]
   }
 ]
@@ -203,14 +222,14 @@ export function ProjectSelector() {
             <span className="text-primary"> Ecosystem</span>
           </h1>
           <p className="text-sm sm:text-base md:text-lg font-semibold text-foreground/85 max-w-2xl mx-auto mb-1 sm:mb-2 font-sans px-4">
-            Open-source projects for system-level development
+            Open-source Linux projects by CodeWithEvilXD (Nishant Gaurav) for system-level development
           </p>
           <p className="text-xs sm:text-sm font-medium text-muted-foreground max-w-xl mx-auto font-sans px-4">
-            Choose a project to explore
+            ApexLinux, GetLainux, Nexus Engine, Lainux Cyber Theme - Choose a project to explore
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 max-w-7xl mx-auto w-full">
+        <div className="grid grid-cols-2 gap-4 sm:gap-5 md:gap-6 max-w-4xl mx-auto w-full">
           {projects.map((project) => (
             <ProfileCard
               key={project.id}
@@ -219,13 +238,19 @@ export function ProjectSelector() {
           ))}
         </div>
 
-        <div className="text-center mt-6 sm:mt-8 space-y-1 sm:space-y-2 pt-4 sm:pt-6 border-t border-border/50 flex-shrink-0">
+        <div className="text-center mt-6 sm:mt-8 space-y-2 sm:space-y-3 pt-4 sm:pt-6 border-t border-border/50 flex-shrink-0">
           <p className="text-xs sm:text-sm font-medium text-foreground/75 font-sans px-4">
             All projects are part of the GetLainux ecosystem
           </p>
-          <p className="text-xs font-medium text-muted-foreground font-mono px-4">
-            Developed by <span className="font-semibold text-foreground/80">codewithevilxd</span> • Open Source • GPL-3.0
-          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 px-4">
+            <p className="text-xs font-medium text-muted-foreground font-mono">
+              Developed by <a href="https://nishantdev.space" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary hover:underline">Nishant Gaurav</a> (<span className="font-semibold text-foreground/80">codewithevilxd</span>)
+            </p>
+            <span className="hidden sm:block text-muted-foreground/50">•</span>
+            <p className="text-xs font-medium text-muted-foreground font-mono">
+              Open Source • GPL-3.0
+            </p>
+          </div>
         </div>
       </div>
     </section>
