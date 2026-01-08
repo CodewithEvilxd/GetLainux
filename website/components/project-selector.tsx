@@ -151,7 +151,7 @@ function ProfileCard({ project }: ProfileCardProps) {
           </div>
 
           {/* Description */}
-          <p className="text-xs sm:text-sm font-medium text-foreground/85 leading-relaxed mb-3 sm:mb-4 font-sans">
+          <p className="text-xs sm:text-sm font-medium text-foreground/85 leading-relaxed mb-3 sm:mb-4 font-sans break-words">
             {project.description}
           </p>
 
@@ -172,7 +172,7 @@ function ProfileCard({ project }: ProfileCardProps) {
             {project.features.map((feature, idx) => (
               <span
                 key={idx}
-                className="px-2 py-0.5 text-xs font-semibold bg-primary/5 border border-primary/20 rounded text-foreground/85 hover:bg-primary/10 hover:border-primary/30 transition-colors font-game"
+                className="px-2 py-0.5 text-xs font-semibold bg-primary/5 border border-primary/20 rounded text-foreground/85 hover:bg-primary/10 hover:border-primary/30 transition-colors font-game break-words"
               >
                 {feature}
               </span>
@@ -229,7 +229,7 @@ export function ProjectSelector() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:gap-5 md:gap-6 max-w-4xl mx-auto w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 max-w-4xl mx-auto w-full overflow-x-hidden">
           {projects.map((project) => (
             <ProfileCard
               key={project.id}
