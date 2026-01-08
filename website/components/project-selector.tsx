@@ -202,11 +202,11 @@ export function ProjectSelector() {
   }, [])
 
   if (!mounted) {
-    return null
+    return <div className="min-h-screen flex items-center justify-center">Loading...</div>
   }
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden pt-0 pb-8 sm:pb-12">
+    <section className="relative min-h-screen flex flex-col overflow-hidden pt-0 pb-8 sm:pb-12" suppressHydrationWarning>
       {/* OPEN SOURCE Badge - Right below navbar */}
       <div className="w-full px-4 sm:px-6 lg:px-8 pt-2 pb-1 relative z-10 flex justify-end">
         <span className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-br from-muted/50 to-muted/30 backdrop-blur-sm border border-border/70 rounded-lg text-xs font-semibold text-foreground/75 font-mono tracking-wider shadow-sm hover:from-muted/70 hover:to-muted/50 hover:border-primary/50 hover:text-primary hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
