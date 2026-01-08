@@ -18,15 +18,15 @@ import (
 
 // ---------- Localization ----------
 type Phrases struct {
-	Title                string
-	Logo                 string
-	VersionLine          string
-	SystemTime           string
-	Navigation           string
-	Arch                 string
-	Kernel               string
-	ExitConfirm          string
-	ExitAction           string
+	Title       string
+	Logo        string
+	VersionLine string
+	SystemTime  string
+	Navigation  string
+	Arch        string
+	Kernel      string
+	ExitConfirm string
+	ExitAction  string
 
 	// Menu
 	MenuItems [9]string
@@ -50,35 +50,35 @@ type Phrases struct {
 	LoadAvgLabel     string
 
 	// Requirements
-	RequirementsTitle    string
-	RAMWarning           string
-	CPUWarning           string
-	DiskSpaceWarning     string
-	MeetsRequirements    string
-	MayNotPerform        string
+	RequirementsTitle string
+	RAMWarning        string
+	CPUWarning        string
+	DiskSpaceWarning  string
+	MeetsRequirements string
+	MayNotPerform     string
 
 	// Disk selection
-	NoDisksFound         string
+	NoDisksFound string
 
 	// VM
-	VMTitle              string
-	VMRequirements       string
+	VMTitle        string
+	VMRequirements string
 
 	// Config
-	ConfigTitle          string
-	ConfigSaved          string
+	ConfigTitle string
+	ConfigSaved string
 
 	// Network
-	NetworkChecking      string
-	NetworkConnected     string
-	NetworkOffline       string
-	PublicIP             string
-	NoInterface          string
+	NetworkChecking  string
+	NetworkConnected string
+	NetworkOffline   string
+	PublicIP         string
+	NoInterface      string
 
 	// Common
-	PressAnyKey          string
-	Back                 string
-	Quit                 string
+	PressAnyKey string
+	Back        string
+	Quit        string
 }
 
 var phrases = map[string]Phrases{
@@ -122,30 +122,30 @@ var phrases = map[string]Phrases{
 		UptimeLabel:      "Uptime",
 		LoadAvgLabel:     "Load avg",
 
-		RequirementsTitle:    "SYSTEM REQUIREMENTS CHECK",
-		RAMWarning:           "WARNING: Minimum 1GB RAM recommended",
-		CPUWarning:           "WARNING: Dual-core CPU recommended",
-		DiskSpaceWarning:     "WARNING: At least 2GB free space required in /tmp",
-		MeetsRequirements:    "✓ System meets minimum requirements",
-		MayNotPerform:        "⚠ System may not perform optimally",
+		RequirementsTitle: "SYSTEM REQUIREMENTS CHECK",
+		RAMWarning:        "WARNING: Minimum 1GB RAM recommended",
+		CPUWarning:        "WARNING: Dual-core CPU recommended",
+		DiskSpaceWarning:  "WARNING: At least 2GB free space required in /tmp",
+		MeetsRequirements: "✓ System meets minimum requirements",
+		MayNotPerform:     "⚠ System may not perform optimally",
 
-		NoDisksFound:         "No suitable disks found. Please check connections.",
+		NoDisksFound: "No suitable disks found. Please check connections.",
 
-		VMTitle:              "VIRTUAL MACHINE INSTALLATION",
-		VMRequirements:       "Requirements:\n- KVM or virtualization support\n- 20GB free disk space\n- 4GB RAM\n- Internet connection",
+		VMTitle:        "VIRTUAL MACHINE INSTALLATION",
+		VMRequirements: "Requirements:\n- KVM or virtualization support\n- 20GB free disk space\n- 4GB RAM\n- Internet connection",
 
-		ConfigTitle:          "SELECT CONFIGURATION",
-		ConfigSaved:          "Configuration saved to getlainux-config.txt",
+		ConfigTitle: "SELECT CONFIGURATION",
+		ConfigSaved: "Configuration saved to getlainux-config.txt",
 
-		NetworkChecking:      "Checking network...",
-		NetworkConnected:     "Connected ✓",
-		NetworkOffline:       "No connection ✗",
-		PublicIP:             "Public IP",
-		NoInterface:          "No active interface found",
+		NetworkChecking:  "Checking network...",
+		NetworkConnected: "Connected ✓",
+		NetworkOffline:   "No connection ✗",
+		PublicIP:         "Public IP",
+		NoInterface:      "No active interface found",
 
-		PressAnyKey:          "Press any key to continue...",
-		Back:                 "b: Back",
-		Quit:                 "q: Quit",
+		PressAnyKey: "Press any key to continue...",
+		Back:        "b: Back",
+		Quit:        "q: Quit",
 	},
 	"RU": {
 		Title:       "УСТАНОВЩИК GETLAINUX",
@@ -187,40 +187,40 @@ var phrases = map[string]Phrases{
 		UptimeLabel:      "Время работы",
 		LoadAvgLabel:     "Средняя нагрузка",
 
-		RequirementsTitle:    "ПРОВЕРКА СИСТЕМНЫХ ТРЕБОВАНИЙ",
-		RAMWarning:           "ВНИМАНИЕ: Рекомендуется минимум 1 ГБ ОЗУ",
-		CPUWarning:           "ВНИМАНИЕ: Рекомендуется двухъядерный процессор",
-		DiskSpaceWarning:     "ВНИМАНИЕ: Требуется минимум 2 ГБ свободного места в /tmp",
-		MeetsRequirements:    "✓ Система соответствует минимальным требованиям",
-		MayNotPerform:        "⚠ Система может работать нестабильно",
+		RequirementsTitle: "ПРОВЕРКА СИСТЕМНЫХ ТРЕБОВАНИЙ",
+		RAMWarning:        "ВНИМАНИЕ: Рекомендуется минимум 1 ГБ ОЗУ",
+		CPUWarning:        "ВНИМАНИЕ: Рекомендуется двухъядерный процессор",
+		DiskSpaceWarning:  "ВНИМАНИЕ: Требуется минимум 2 ГБ свободного места в /tmp",
+		MeetsRequirements: "✓ Система соответствует минимальным требованиям",
+		MayNotPerform:     "⚠ Система может работать нестабильно",
 
-		NoDisksFound:         "Подходящие диски не найдены. Проверьте подключение.",
+		NoDisksFound: "Подходящие диски не найдены. Проверьте подключение.",
 
-		VMTitle:              "УСТАНОВКА ВИРТУАЛЬНОЙ МАШИНЫ",
-		VMRequirements:       "Требования:\n- Поддержка KVM или виртуализации\n- 20 ГБ свободного места\n- 4 ГБ ОЗУ\n- Подключение к интернету",
+		VMTitle:        "УСТАНОВКА ВИРТУАЛЬНОЙ МАШИНЫ",
+		VMRequirements: "Требования:\n- Поддержка KVM или виртуализации\n- 20 ГБ свободного места\n- 4 ГБ ОЗУ\n- Подключение к интернету",
 
-		ConfigTitle:          "ВЫБЕРИТЕ КОНФИГУРАЦИЮ",
-		ConfigSaved:          "Конфигурация сохранена в getlainux-config.txt",
+		ConfigTitle: "ВЫБЕРИТЕ КОНФИГУРАЦИЮ",
+		ConfigSaved: "Конфигурация сохранена в getlainux-config.txt",
 
-		NetworkChecking:      "Проверка сети...",
-		NetworkConnected:     "Подключено ✓",
-		NetworkOffline:       "Нет подключения ✗",
-		PublicIP:             "Публичный IP",
-		NoInterface:          "Активный интерфейс не найден",
+		NetworkChecking:  "Проверка сети...",
+		NetworkConnected: "Подключено ✓",
+		NetworkOffline:   "Нет подключения ✗",
+		PublicIP:         "Публичный IP",
+		NoInterface:      "Активный интерфейс не найден",
 
-		PressAnyKey:          "Нажмите любую клавишу для продолжения...",
-		Back:                 "b: Назад",
-		Quit:                 "q: Выход",
+		PressAnyKey: "Нажмите любую клавишу для продолжения...",
+		Back:        "b: Назад",
+		Quit:        "q: Выход",
 	},
 }
 
 // ---------- Styles ----------
 var (
-	titleStyle   = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("#cba6f7"))
-	greenStyle   = lipgloss.NewStyle().Foreground(lipgloss.Color("#a6e3a1"))
-	redStyle     = lipgloss.NewStyle().Foreground(lipgloss.Color("#f38ba8"))
-	hintStyle    = lipgloss.NewStyle().Foreground(lipgloss.Color("#6c7086"))
-	docStyle     = lipgloss.NewStyle().Margin(1, 2)
+	titleStyle = lipgloss.NewStyle().Bold(true).Foreground(lipgloss.Color("#cba6f7"))
+	greenStyle = lipgloss.NewStyle().Foreground(lipgloss.Color("#a6e3a1"))
+	redStyle   = lipgloss.NewStyle().Foreground(lipgloss.Color("#f38ba8"))
+	hintStyle  = lipgloss.NewStyle().Foreground(lipgloss.Color("#6c7086"))
+	docStyle   = lipgloss.NewStyle().Margin(1, 2)
 )
 
 // ---------- Types ----------
@@ -242,29 +242,38 @@ const (
 )
 
 type model struct {
-	currentStep    step
-	menuIndex      int
-	selectedDisk   string
-	diskSize       string
-	diskModel      string
-	lang           string
-	networkOnline  bool
-	publicIP       string
-	userInput      string
+	currentStep   step
+	menuIndex     int
+	selectedDisk  string
+	diskSize      string
+	diskModel     string
+	lang          string
+	networkOnline bool
+	publicIP      string
+	userInput     string
 }
 
 // ---------- Helpers ----------
 func normalizeKey(k string) string {
 	switch k {
-	case "й", "Й", "q", "Q": return "q"
-	case "б", "Б", "b", "B": return "b"
-	case "у", "У", "y", "Y": return "y"
-	case "н", "Н", "n", "N": return "n"
-	case "д", "Д", "l", "L": return "l"
-	case "enter", "\r", "\n": return "enter"
-	case "esc": return "esc"
-	case "up", "down": return k
-	default: return strings.ToLower(k)
+	case "й", "Й", "q", "Q":
+		return "q"
+	case "б", "Б", "b", "B":
+		return "b"
+	case "у", "У", "y", "Y":
+		return "y"
+	case "н", "Н", "n", "N":
+		return "n"
+	case "д", "Д", "l", "L":
+		return "l"
+	case "enter", "\r", "\n":
+		return "enter"
+	case "esc":
+		return "esc"
+	case "up", "down":
+		return k
+	default:
+		return strings.ToLower(k)
 	}
 }
 
@@ -599,9 +608,10 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 
 		switch m.currentStep {
 		case stepWelcome:
-			if key == "enter" {
+			switch key {
+			case "enter":
 				m.currentStep = stepMenu
-			} else if key == "q" || key == "esc" {
+			case "q", "esc":
 				m.currentStep = stepExitConfirm
 				m.userInput = ""
 			}
@@ -651,12 +661,13 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			}
 
 		case stepSelectDisk:
-			if key == "b" {
+			switch key {
+			case "b":
 				m.currentStep = stepMenu
-			} else if key == "q" || key == "esc" {
+			case "q", "esc":
 				m.currentStep = stepExitConfirm
 				m.userInput = ""
-			} else if key == "enter" {
+			case "enter":
 				disks := getDisks()
 				if len(disks) > 0 {
 					disk := disks[m.menuIndex%len(disks)]
@@ -665,20 +676,21 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 					m.diskModel = disk["model"]
 					m.currentStep = stepInstallHardware
 				}
-			} else if key == "up" {
+			case "up":
 				m.menuIndex--
 				if m.menuIndex < 0 {
 					m.menuIndex = 0
 				}
-			} else if key == "down" {
+			case "down":
 				m.menuIndex++
 			}
 
 		case stepInstallHardware, stepInstallVM, stepHardwareInfo, stepRequirements,
 			stepConfig, stepDiskInfo, stepNetworkCheck, stepNetworkDiag:
-			if key == "b" || key == "esc" {
+			switch key {
+			case "b", "esc":
 				m.currentStep = stepMenu
-			} else if key == "q" {
+			case "q":
 				m.currentStep = stepExitConfirm
 				m.userInput = ""
 			}
