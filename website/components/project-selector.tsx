@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Server, Cpu, Terminal, Palette } from 'lucide-react'
+import { ArrowRight, Server, Cpu, Terminal, Palette, Shuffle } from 'lucide-react'
 import { Button } from './ui/button'
 
 function ProjectLogo({ src, alt, className, style }: { src: string; alt: string; className?: string; style?: React.CSSProperties }) {
@@ -97,6 +97,25 @@ const projects = [
       'OLED optimized near-black backgrounds',
       'Cohesive boot splash → login → desktop theming',
       'Auto-detected hardware sensors for Conky'
+    ]
+  },
+  {
+    id: 'flavourswitch',
+    name: 'FlavourSwitch',
+    title: 'QuickShell Theme Manager',
+    description: 'Powerful CLI tool for managing multiple QuickShell configurations. Instant theme switching with intelligent keybind management and interactive panel for Hyprland users.',
+    icon: Shuffle,
+    href: '/flavourswitch',
+    features: ['Instant Switching', 'Theme Management', 'Interactive Panel', 'Keybind Management', 'Auto-Fix System'],
+    logo: '/logo4.png',
+    status: 'Active',
+    handle: 'flavourswitch',
+    details: [
+      'Switch between QuickShell themes in milliseconds',
+      'Support for unlimited custom themes/flavours',
+      'Beautiful GUI panel for theme selection',
+      'Intelligent keybind conflict resolution',
+      'Self-healing configuration system'
     ]
   }
 ]
@@ -225,7 +244,7 @@ export function ProjectSelector() {
             Open-source Linux projects by CodeWithEvilXD (Nishant Gaurav) for system-level development
           </p>
           <p className="text-xs sm:text-sm font-medium text-muted-foreground max-w-xl mx-auto font-sans px-4">
-            ApexLinux, GetLainux, Nexus Engine, Lainux Cyber Theme - Choose a project to explore
+            ApexLinux, GetLainux, Nexus Engine, Lainux Cyber Theme, FlavourSwitch - Choose a project to explore
           </p>
         </div>
 

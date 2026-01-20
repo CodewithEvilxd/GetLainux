@@ -56,6 +56,7 @@ export function Navbar() {
   const isApexLinuxPage = pathname === '/apexlinux'
   const isNexusPage = pathname === '/nexus'
   const isLainuxCyberPage = pathname === '/lainux-cyber-theme'
+  const isFlavourSwitchPage = pathname === '/flavourswitch'
 
   const navItems = isGetLainuxPage ? getlainuxNavItems : isApexLinuxPage ? apexlinuxNavItems : isNexusPage ? nexusNavItems : []
   const showNavItems = !isHomePage && navItems.length > 0
@@ -101,6 +102,8 @@ export function Navbar() {
                     ? "/apexlinux-logo.png"
                     : isLainuxCyberPage
                     ? "/logo3.png"
+                    : isFlavourSwitchPage
+                    ? "/logo4.png"
                     : "/logo.png"
                 }
                 alt={isNexusPage ? "Nexus Logo" : isApexLinuxPage ? "ApexLinux Logo" : isLainuxCyberPage ? "Lainux Cyber Logo" : "GetLainux Logo"}
@@ -115,7 +118,7 @@ export function Navbar() {
               />
             </div>
             <span className="text-xl sm:text-2xl font-black font-heading">
-              {isHomePage ? 'GetLainux Ecosystem' : isNexusPage ? 'Nexus' : isApexLinuxPage ? 'ApexLinux' : isLainuxCyberPage ? 'Lainux Cyber' : 'GetLainux'}
+              {isHomePage ? 'GetLainux Ecosystem' : isNexusPage ? 'Nexus' : isApexLinuxPage ? 'ApexLinux' : isLainuxCyberPage ? 'Lainux Cyber' : isFlavourSwitchPage ? 'FlavourSwitch' : 'GetLainux'}
             </span>
           </Link>
 

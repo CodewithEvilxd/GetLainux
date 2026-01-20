@@ -14,16 +14,19 @@ export function Footer() {
   const isGetLainuxPage = pathname === '/getlainux'
   const isApexLinuxPage = pathname === '/apexlinux'
   const isLainuxCyberPage = pathname === '/lainux-cyber-theme'
+  const isFlavourSwitchPage = pathname === '/flavourswitch'
   const isHomePage = pathname === '/'
 
   // Determine which project we're showing
-  const projectName = isNexusPage ? 'Nexus' : isApexLinuxPage ? 'ApexLinux' : isLainuxCyberPage ? 'Lainux Cyber' : 'GetLainux'
+  const projectName = isNexusPage ? 'Nexus' : isApexLinuxPage ? 'ApexLinux' : isLainuxCyberPage ? 'Lainux Cyber' : isFlavourSwitchPage ? 'FlavourSwitch' : 'GetLainux'
   const projectLogo = isNexusPage
     ? (logoError ? "/logo.png" : "/nexus-logo.png")
     : isApexLinuxPage
     ? "/apexlinux-logo.png"
     : isLainuxCyberPage
     ? "/logo3.png"
+    : isFlavourSwitchPage
+    ? "/logo4.png"
     : "/logo.png"
   const projectDescription = isNexusPage
     ? 'High-performance system execution engine. Bridge between kernel and Protocol language.'
@@ -31,6 +34,8 @@ export function Footer() {
     ? 'Minimal, customizable QML-based shell for Linux. Control your desktop with QML.'
     : isLainuxCyberPage
     ? 'Complete KDE Plasma 6 desktop theme with cyberpunk aesthetics. Cyan-dominant palette optimized for OLED displays.'
+    : isFlavourSwitchPage
+    ? 'Ultimate QuickShell Theme Manager. Powerful CLI tool for managing multiple QuickShell configurations.'
     : 'Minimal Linux distro built on Arch. For developers who want control, not convenience.'
   const githubUrl = isNexusPage
     ? "https://github.com/codewithevilxd/Nexus"
@@ -38,6 +43,8 @@ export function Footer() {
     ? "https://github.com/codewithevilxd/ApexLinux"
     : isLainuxCyberPage
     ? "https://github.com/codewithevilxd/lainux-cyber-theme"
+    : isFlavourSwitchPage
+    ? "https://github.com/CodewithEvilxd/flavourswitch"
     : "https://github.com/CodewithEvilxd/GetLainux"
 
   return (
@@ -127,7 +134,7 @@ export function Footer() {
           <div className="flex flex-col items-center md:items-end gap-1">
             <p className="text-sm font-medium text-muted-foreground">GPL-3.0 License</p>
             <p className="text-xs font-medium text-muted-foreground/70">
-              GetLainux • ApexLinux • Nexus Engine • Lainux Cyber Theme
+              GetLainux • ApexLinux • Nexus Engine • Lainux Cyber Theme • FlavourSwitch
             </p>
           </div>
         </div>
