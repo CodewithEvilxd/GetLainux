@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Server, Cpu, Terminal, Palette, Shuffle } from 'lucide-react'
+import { ArrowRight, Server, Cpu, Terminal, Palette, Shuffle, Search } from 'lucide-react'
 import { Button } from './ui/button'
 
 function ProjectLogo({ src, alt, className, style }: { src: string; alt: string; className?: string; style?: React.CSSProperties }) {
@@ -116,6 +116,25 @@ const projects = [
       'Beautiful GUI panel for theme selection',
       'Intelligent keybind conflict resolution',
       'Self-healing configuration system'
+    ]
+  },
+  {
+    id: 'vortex-cli',
+    name: 'Vortex CLI',
+    title: 'YouTube Browser for Terminal',
+    description: 'Lightning-fast YouTube browser for your terminal. Browse, stream, and download YouTube content without leaving your command line with beautiful previews and fuzzy search.',
+    icon: Search,
+    href: '/vortex-cli',
+    features: ['Interactive Browser', 'Live Streaming', 'Download Manager', 'Fuzzy Search', 'Rich Previews'],
+    logo: '/logo5.png',
+    status: 'Active',
+    handle: 'vortex-cli',
+    details: [
+      'Navigate YouTube with fuzzy search and keyboard controls',
+      'Watch live streams directly in terminal',
+      'Download videos, playlists, and audio with yt-dlp',
+      'Thumbnail previews with chafa/icat support',
+      'Extensible with custom bash extensions'
     ]
   }
 ]

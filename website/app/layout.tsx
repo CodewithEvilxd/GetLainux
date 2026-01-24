@@ -4,7 +4,6 @@ import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
-import { TargetCursor } from '@/components/target-cursor'
 import LightRays from '@/components/light-rays'
 
 const inter = Inter({ 
@@ -174,7 +173,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <TargetCursor />
           <LightRays
             raysOrigin="top-center"
             raysColor="#3b82f6"
