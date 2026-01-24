@@ -4,9 +4,21 @@ const app = express();
 
 // Enable CORS for your Next.js app
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://www.getlainux.in', 'https://getlainux.in'], // Dev server + Live website
+  origin: ['http://localhost:3000', 'https://www.getlainux.in', 'https://getlainux.in', 'https://getlainux.vercel.app'], // Dev server + Live website
   credentials: true
 }));
+
+// Root route for status check
+app.get('/', (req, res) => {
+  res.json({
+    status: 'ok',
+    message: '🎵 Evilxd JioSaavn Proxy Server',
+    endpoints: {
+      search: '/api/search?query={query}&limit={limit}',
+      stream: '/api/stream/{songId}'
+    }
+  });
+});
 
 // JioSaavn API proxy with enhanced search
 app.get('/api/search', async (req, res) => {
@@ -139,9 +151,15 @@ app.get('/api/stream/:songId', async (req, res) => {
   }
 });
 
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`🎵 Evilxd Proxy Server running on port ${PORT}`);
-  console.log(`📡 Audio streaming enabled for Vortex CLI`);
-  console.log(`🌐 Connect your frontend to: http://localhost:${PORT}`);
-});
+// Export for Vercel serverless function
+module.exports = app;
+
+// For local development
+if (require.main === module) {
+  const PORT = 3001;
+  app.listen(PORT, () => {
+    console.log(`🎵 Evilxd Proxy Server running on port ${PORT}`);
+    console.log(`📡 Audio streaming enabled for Vortex CLI`);
+    console.log(`🌐 Connect your frontend to: http://localhost:${PORT}`);
+  });
+}

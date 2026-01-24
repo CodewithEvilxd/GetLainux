@@ -113,13 +113,13 @@ Choose an option (1-9): `,
     // Use the deployed proxy server for streaming (search uses direct API)
     if (typeof window !== 'undefined') {
       if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
-        return 'https://jiosaavn-proxy-evilxd.vercel.app' // ← Replace with your deployed proxy URL
+        return 'https://myappww.vercel.app' // ← Updated proxy URL
       }
     }
     return 'http://localhost:3001'
   }
 
-  // Get search API URL (direct Vercel API)
+  // Get search API URL (your deployed Vercel API)
   const getSearchApiUrl = () => {
     return 'https://my-coral-six.vercel.app'
   }
